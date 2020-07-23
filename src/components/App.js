@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
         <div>
           <Nav/>
-          <DieuHuongURL />
+          <DieuHuongURL/>
           <Footer/>
         </div>
       </Router>

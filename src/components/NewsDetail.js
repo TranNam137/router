@@ -4,9 +4,7 @@ import NewRelated from './NewRelated';
 
 class NewsDetail extends Component {
 	render() {
-		console.log(this.props.match.params.id);
-		console.log((this.props.match.params.id));
-
+		var dem=1;
 		return (
 			<div>
 					<header className="masthead tintuc">
@@ -51,16 +49,20 @@ class NewsDetail extends Component {
 
 				            {
 				            	dl.map((value,key) => {
-				            		if(key<=3){
-					            		return (
-					            			<NewRelated key={key}
-					            				tinId={value.id}
-										 		anh={value.anh}
-												tieude={value.tieude}
-										 		trichdan={value.trichdan}>
-					            			</NewRelated>
-					            		)
-				            		}
+									if(value.id !== this.props.match.params.id)
+									{
+										if(dem<=4){
+											dem++;
+											return (
+												<NewRelated key={key}
+													tinId={value.id}
+													anh={value.anh}
+													tieude={value.tieude}
+													trichdan={value.trichdan}>
+												</NewRelated>
+											)
+										}
+									}	
 
 				            	})
 				            }
